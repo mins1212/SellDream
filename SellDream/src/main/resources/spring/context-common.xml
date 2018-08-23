@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:task="http://www.springframework.org/schema/task" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-3.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+    <context:component-scan base-package="com.portfolio.selldream" />
+    <task:annotation-driven />
+
+	<!-- 실제 서버로 옮길 때는 바꿔주어야 한다  -->
+    <util:properties id="contextProperties" location="classpath:context.properties" />
+
+    <!-- 개발환경 -->
+    <!-- <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource" destroy-method="forceCloseAll">
+        <property name="driver" value="#{contextProperties['jdbc.driver']}" />
+        <property name="url" value="#{contextProperties['jdbc.url']}" />
+        <property name="username" value="#{contextProperties['jdbc.username']}" />
+        <property name="password" value="#{contextProperties['jdbc.password']}" />
+        <property name="poolPingEnabled" value="true" />
+        <property name="poolPingQuery" value="SELECT 1" />
+        <property name="poolPingConnectionsNotUsedFor" value="21600000" />
+    </bean> -->
+
+	<!-- Tiles3 -->
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"> 
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+		<property name="order" value="2"/>
+	</bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+</beans>

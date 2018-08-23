@@ -1,0 +1,19 @@
+<!-- <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="C:\DevTools\JDBC\mariadb-java-client-2.2.3.jar" />
+    <context id="MPF2_API" defaultModelType="flat">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <jdbcConnection driverClass="org.mariadb.jdbc.Driver" connectionURL="jdbc:mariadb://118.45.182.137:23306/rmis?useUnicode=true&amp;characterEncoding=utf8" userId="rmis" password="rmis" />
+
+        <javaModelGenerator targetPackage="com.portfolio.selldream.vo" targetProject="MPF2_API/src/main/java" />
+        <sqlMapGenerator targetPackage="zinsoft.mpf.dao.mapper" targetProject="MPF2_API/src/main/java" />
+
+        
+       
+        <table tableName="tb_price" domainObjectName="Price" />
+    </context>
+</generatorConfiguration> -->
