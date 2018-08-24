@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/task/spring-task-3.2.xsd">
 
     <context:component-scan base-package="com.portfolio.selldream" />
-    <task:annotation-driven />
+    <task:annotation-driven/>
 
 	<!-- 실제 서버로 옮길 때는 바꿔주어야 한다  -->
     <util:properties id="contextProperties" location="classpath:context.properties" />
@@ -33,4 +33,33 @@
 	</bean>
 
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+    
+    <bean id="leaveaTrace" class="egovframework.rte.fdl.cmmn.trace.LeaveaTrace">
+        <property name="traceHandlerServices">
+            <list>
+                <ref bean="traceHandlerService" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="traceHandlerService" class="egovframework.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager">
+        <property name="reqExpMatcher">
+            <ref bean="antPathMater" />
+        </property>
+        <property name="patterns">
+            <list>
+                <value>*</value>
+            </list>
+        </property>
+        <property name="handlers">
+            <list>
+                <ref bean="defaultTraceHandler" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="antPathMater" class="org.springframework.util.AntPathMatcher" />
+
+    <bean id="defaultTraceHandler" class="egovframework.rte.fdl.cmmn.trace.handler.DefaultTraceHandler" />
+    
 </beans>
