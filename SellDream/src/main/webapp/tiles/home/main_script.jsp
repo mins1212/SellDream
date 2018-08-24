@@ -27,11 +27,11 @@ var USERS = {
             dataSrc: ''
         },
         columns: [
-        	{data: "userId"}, 
-        	{data: "userPwd"}, 
-        	{data: "userNm"}, 
-        	{data: "regDtm"}, 
-        	{data: "statusCd"}, 
+        	{data: "user_id"}, 
+        	{data: "user_pwd"}, 
+        	{data: "user_nm"}, 
+        	{data: "reg_dtm"}, 
+        	{data: "status_cd"}, 
         	{data: "phone"}, 
         	{data: "address"}, 
         	{data: "email"}, 
