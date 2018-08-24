@@ -1,0 +1,20 @@
+USE selldream;
+
+DROP TABLE user_tbl;
+
+CREATE TABLE user_tbl (
+user_id VARCHAR(20) PRIMARY KEY,
+user_pwd VARCHAR(50) NOT NULL,
+user_nm VARCHAR(20) NOT NULL,
+reg_dtm TIMESTAMP NOT NULL,
+status_cd CHAR(1) NOT NULL,
+phone VARCHAR(20) NOT NULL,
+address VARCHAR(400) NOT NULL,
+email VARCHAR(50) NOT NULL,
+coin INT DEFAULT 0
+)
+
+INSERT INTO user_tbl (user_id, user_pwd, user_nm, reg_dtm, status_cd, phone, address, email, coin) 
+VALUES (1, 1234, 'admin', NOW(), 'N', '010-1111-1111', '대구광역시 동구 동구로 동구동 1번지', 'admin@selldream.com', 100);
+
+SELECT * FROM user_tbl;
