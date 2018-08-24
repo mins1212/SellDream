@@ -16,7 +16,7 @@
     <util:properties id="contextProperties" location="classpath:context.properties" />
 
     <!-- 개발환경 -->
-    <!-- <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource" destroy-method="forceCloseAll">
+    <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource" destroy-method="forceCloseAll">
         <property name="driver" value="#{contextProperties['jdbc.driver']}" />
         <property name="url" value="#{contextProperties['jdbc.url']}" />
         <property name="username" value="#{contextProperties['jdbc.username']}" />
@@ -24,7 +24,7 @@
         <property name="poolPingEnabled" value="true" />
         <property name="poolPingQuery" value="SELECT 1" />
         <property name="poolPingConnectionsNotUsedFor" value="21600000" />
-    </bean> -->
+    </bean>
 
 	<!-- Tiles3 -->
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver"> 
