@@ -85,7 +85,11 @@
 		    <artifactId>spring-jdbc</artifactId>
 		    <version>4.1.5.RELEASE</version>
 	    </dependency>
-
+		<dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
+		</dependency>
 				
 		<!-- AspectJ -->
 		<dependency>

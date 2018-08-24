@@ -7,7 +7,7 @@
             <property name="suppressAllComments" value="true" />
         </commentGenerator>
 
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/selldream" userId="root" password="1234" />
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/selldream?characterEncoding=UTF-8&amp;serverTimezone=UTC" userId="root" password="1234" />
 
         <javaModelGenerator targetPackage="com.portfolio.selldream.vo" targetProject="SellDream/src/main/java" />
         <sqlMapGenerator targetPackage="com.portfolio.selldream.mapper" targetProject="SellDream/src/main/java" />
